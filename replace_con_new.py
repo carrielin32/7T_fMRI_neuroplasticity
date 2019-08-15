@@ -7,22 +7,9 @@ import numpy as np
 
 parsed=pd.read_csv('/Users/carrielin/Desktop/V8678_log/log1.csv')
 
-/Users/carrielin/Downloads/v3211_log1.csv 
 
-#indexNames = parsed[(parsed['con'] == 1) | (parsed['con']== 11) | (parsed['con'] == 49) | (parsed['con'] == 66)].index
-#parsed=parsed.drop(indexNames, inplace=True)
 
-#use this method 
-replace_values = {'1':0, '11':0, '49':0,'66':0}
-parsed = parsed.replace({"con":replace_values})
-parsed = parsed[parsed['con']!=0]
-
-#or this section
-replace_values = {'2':0, '11':0, '49':0,'67':0}
-parsed = parsed.replace({"con":replace_values})
-parsed = parsed[parsed['con']!=0]
-
-#or this section 
+#replace numbers to 0 
 replace_values = {'1':0, '2':0, '11':0, '49':0,'66':0, '67':0}
 parsed = parsed.replace({"con":replace_values})
 parsed = parsed[parsed['con']!=0]
@@ -55,4 +42,4 @@ parsed['con_new']=parsed['con_new'].replace('short, 8k, R','8kR')
 parsed.to_csv('/Users/carrielin/Desktop/exp_Visual_Audi/log_file_auditory/session1_new_0308.csv')
 
 
-# similar as session2
+# same for session2
